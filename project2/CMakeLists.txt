@@ -3,7 +3,7 @@ project(project2 VERSION 1.0.0)
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install/")
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cotire/CMake/")
 include(reason)
 

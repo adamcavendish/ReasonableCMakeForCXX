@@ -1,3 +1,6 @@
 [submodule "cotire"]
 	path = cotire
 	url = https://github.com/sakra/cotire.git
+[submodule "reason"]
+	path = reason
+	url = https://github.com/adamcavendish/reason.cmake.git
