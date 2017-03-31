@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(help VERSION 1.0.0)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/")
+include(reason)
 
 # reason helps stops the whole configure process,
 # and therefore enable only one help (comment others) to see effect.
