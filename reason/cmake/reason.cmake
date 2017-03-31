@@ -5,6 +5,9 @@ endif()
 # Reasonable CMake Project
 include(reason_color)
 include(reason_util)
+# Use cotire if possible
+# @see https://github.com/sakra/cotire
+include(cotire OPTIONAL)
 
 function(reason_add_library)
   set(options HELP NO_STATIC NO_SHARED)
@@ -70,6 +73,10 @@ example:
     foreach(LINK IN LISTS reason_LINKS)
       target_link_libraries("${reason_TARGET}_s" PUBLIC "${LINK}")
     endforeach()
+    # Use cotire if available
+    if (COMMAND cotire)
+      cotire("${reason_TARGET}_s")
+    endif()
   endif()
 
   # Build shared library
@@ -93,6 +100,10 @@ example:
     # Handle RPATH
     set_target_properties("${reason_TARGET}_d" PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
     set_target_properties("${reason_TARGET}_d" PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+    # Use cotire if available
+    if (COMMAND cotire)
+      cotire("${reason_TARGET}_d")
+    endif()
   endif()
 endfunction()
 
@@ -127,6 +138,10 @@ description:
   # Handle RPATH
   set_target_properties("${reason_TARGET}" PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
   set_target_properties("${reason_TARGET}" PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+  # Use cotire if available
+  if (COMMAND cotire)
+    cotire("${reason_TARGET}")
+  endif()
 endfunction()
 
 function(reason_install)

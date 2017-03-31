@@ -3,7 +3,8 @@ project(project1 VERSION 1.0.0)
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install/")
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cotire/CMake/")
 include(reason)
 
 message(STATUS "Configure ${PROJECT_NAME} (${PROJECT_VERSION})")
