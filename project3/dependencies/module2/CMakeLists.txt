@@ -15,7 +15,7 @@ reason_add_library(TARGET "module2" INC_DIRS "include" SRCS "${PROJECT_SRCS}")
 reason_add_executable(TARGET "module2_1" SRCS "src/main1.cpp" LINKS "module2_s")
 reason_add_executable(TARGET "module2_2" SRCS "src/main2.cpp" LINKS "module2_d")
 
-reason_install(TARGETS "module2_1" "module2_2" "module2_s" "module2_d" INC_DIRS "include/${PROJECT_NAME}")
+reason_install(TARGETS "module2_1" "module2_2" "module2_s" "module2_d" INC_DIRS "include")
  
 # Test
 enable_testing()

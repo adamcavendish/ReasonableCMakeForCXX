@@ -1,6 +1,6 @@
 # This is a static and dynamic library module, with GLOB for src and headers
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.3)
 project(module1 VERSION 1.2.3)
 
 set(CMAKE_CXX_STANDARD 11)

@@ -18,7 +18,7 @@ set(PROJECT_SRCS "src/the_main1.cpp" "src/the_main2.cpp")
 
 reason_add_library(TARGET "project3" INC_DIRS "include" SRCS "${PROJECT_SRCS}" LINKS "module1_d" "module2_d" "module3_d")
 reason_add_executable(TARGET "project3" SRCS "src/main.cpp" LINKS "project3_s")
-reason_install(TARGETS "project3" "project3_s" "project3_d" INC_DIRS "include/main1" "include/main2")
+reason_install(TARGETS "project3" "project3_s" "project3_d" INC_DIRS "include")
  
 # Enable testing for testing submodules
 reason_add_multiple_tests(TEST_NAME "test_project3" SRCS "test/test1_project3.cpp" LINKS "project3_s")
