@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 file(GLOB module1_SRCS "src/*.cpp")
 
 # Build
-reason_add_library(TARGET "module1" INC_DIRS "include" SRCS "${module1_SRCS}")
+reason_add_library(STATIC SHARED TARGET "module1" INC_DIRS "include" SRCS "${module1_SRCS}")
 
 reason_install(TARGETS "module1_s" "module1_d" INC_DIRS "include")
  

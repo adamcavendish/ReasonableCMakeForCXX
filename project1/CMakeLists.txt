@@ -5,18 +5,24 @@ set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install/")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cotire/CMake/")
+set(REASON_VERBOSE TRUE)
 include(reason)
 
 message(STATUS "Configure ${PROJECT_NAME} (${PROJECT_VERSION})")
 message(STATUS "Install directory: ${CMAKE_INSTALL_PREFIX}")
 
-add_subdirectory("dependencies/module1")
-add_subdirectory("dependencies/module2")
-add_subdirectory("dependencies/module3")
+add_subdirectory("deps/module1")
+add_subdirectory("deps/module2")
+add_subdirectory("deps/module3")
 
 set(PROJECT_SRCS "src/the_main1.cpp" "src/the_main2.cpp")
 
-reason_add_library(TARGET "project1" INC_DIRS "include" SRCS "${PROJECT_SRCS}" LINKS "module1_d" "module2_d" "module3_d")
+reason_add_library(STATIC TARGET "project1" SRCS "${PROJECT_SRCS}"
+                   INC_DIRS "include" 
+                   LINKS "module1_s" "module2_s" "module3_s")
+reason_add_library(SHARED TARGET "project1" SRCS "${PROJECT_SRCS}"
+                   INC_DIRS "include" 
+                   LINKS "module1_d" "module2_d" "module3_d")
 reason_add_executable(TARGET "project1" SRCS "src/main.cpp" LINKS "project1_s")
 reason_install(TARGETS "project1" "project1_s" "project1_d" INC_DIRS "include")
  
