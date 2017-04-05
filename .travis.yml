@@ -1,0 +1,34 @@
+language: cpp
+dist: xenial
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-xenial
+    packages:
+      - gcc-6
+      - g++-6
+      - clang-5.0
+      - clang++-5.0
+      - cmake
+
+matrix:
+  include:
+    - os: linux
+      compiler: gcc
+      env: CC=gcc-6 CXX=g++-6
+    - os: linux
+      compiler: clang
+      env: CC=clang-5.0 CXX=clang++-5.0
+
+before_script:
+  - mkdir -p build
+  - cd build
+  - cmake ..
+
+script:
+  - make
+  - make install
+  - make test
+  - make package
