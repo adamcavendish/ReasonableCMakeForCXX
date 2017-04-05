@@ -29,6 +29,6 @@ before_script:
 
 script:
   - make
-  - make install
   - make test
+  - make install
   - make package
