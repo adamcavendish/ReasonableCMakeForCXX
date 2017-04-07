@@ -1,3 +1,4 @@
+# module2 does not use reason, it shows how to integreate legacy modules with reason.cmake
 # This is a static and dynamic library with binary module, list src files manually
 
 cmake_minimum_required(VERSION 3.0)

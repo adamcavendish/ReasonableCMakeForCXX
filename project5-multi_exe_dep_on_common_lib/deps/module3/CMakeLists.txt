@@ -19,4 +19,4 @@ reason_install(TARGETS "module3_1" "module3_2" "module3_s" "module3_d" INC_DIRS 
  
 # Test
 enable_testing()
-reason_add_multiple_tests(TEST_NAME "test_m3" SRCS "test/test1_m3.cpp" "test/test2_m3.cpp" LINKS "module3_d")
+reason_add_multiple_tests(TEST_NAME "test_m3" SRCS "test/test1_m3.cpp" "test/test2_m3.cpp" LINKS "module3_d" "pthread")

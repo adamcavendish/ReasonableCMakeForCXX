@@ -1,3 +1,4 @@
+# module1 does not use reason, it shows how to integreate legacy modules with reason.cmake
 # This is a static and dynamic library module, with GLOB for src and headers
 
 cmake_minimum_required(VERSION 3.3)

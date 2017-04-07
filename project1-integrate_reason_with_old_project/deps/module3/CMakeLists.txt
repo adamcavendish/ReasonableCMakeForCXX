@@ -1,3 +1,5 @@
+# module3 uses reason, and the project structure is almost the same as module2
+# See how reason.cmake simplies the CMakeLists.txt
 # This is a static and dynamic library with binary module, using reason to simply the whole process
 
 cmake_minimum_required(VERSION 3.0)
