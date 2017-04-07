@@ -1,6 +1,8 @@
 # Reasonable CMake For C++ Demos
 ---
 
+[![Build Status](https://travis-ci.org/adamcavendish/ReasonableCMakeForCXX.svg?branch=master)](https://travis-ci.org/adamcavendish/ReasonableCMakeForCXX)
+
 [reason.cmake](https://github.com/adamcavendish/reason.cmake) is a CMake wrapper to enhance the build experience for C++.
 
 
