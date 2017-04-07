@@ -5,10 +5,10 @@ for project in project*; do
   rm -rf build/
   mkdir -p build/
   cd build/
-  cmake ../
-  make -j$(nproc)
-  make test
-  make package
-  make install
+  cmake ../         || exit $?
+  make -j$(nproc)   || exit $?
+  make test         || exit $?
+  make package      || exit $?
+  make install      || exit $?
   cd ../
 done

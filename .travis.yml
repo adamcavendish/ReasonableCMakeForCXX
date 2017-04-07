@@ -26,13 +26,5 @@ before_install:
   - sudo dpkg -i cmake-3.7_3.7.2.amd64.deb
   - cmake --version
 
-before_script:
-  - mkdir -p build
-  - cd build
-  - cmake ..
-
 script:
-  - make
-  - make test
-  - make install
-  - make package
+  - bash ./build.bash

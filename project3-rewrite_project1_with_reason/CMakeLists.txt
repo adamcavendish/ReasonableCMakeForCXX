@@ -1,12 +1,13 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.3)
 project(project3 VERSION 1.0.0)
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install/")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../reason/")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../cotire/CMake/")
-set(REASON_VERBOSE TRUE)
-set(REASON_BRIEF_PATH TRUE)
+
+set(REASON_VERBOSE FALSE)
+set(REASON_BRIEF_PATH FALSE)
 include(reason)
 
 message(STATUS "Configure ${PROJECT_NAME} (${PROJECT_VERSION})")
