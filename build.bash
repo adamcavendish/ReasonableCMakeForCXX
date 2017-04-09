@@ -1,6 +1,7 @@
 #!/bin/bash
 
 for project in project*; do
+  echo "Building Project: $project"
   cd $project/
   rm -rf build/
   mkdir -p build/
@@ -10,5 +11,6 @@ for project in project*; do
   make test         || exit $?
   make package      || exit $?
   make install      || exit $?
+  cd ../
   cd ../
 done

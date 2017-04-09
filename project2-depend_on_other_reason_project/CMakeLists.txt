@@ -16,7 +16,7 @@ message(STATUS "Install directory: ${CMAKE_INSTALL_PREFIX}")
 # If you installed project1 using 'dpkg -i ./project1.deb',
 # you can just comment out the next line.
 # It'll be found globally in '/usr/share/project1/'
-set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "${CMAKE_SOURCE_DIR}/../project1-integrate-reason-with-old-project/install")
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "${CMAKE_SOURCE_DIR}/../project1-integrate_reason_with_old_project/install")
 find_package(module1)
 find_package(module2)
 find_package(module3)

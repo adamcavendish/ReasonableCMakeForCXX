@@ -17,3 +17,15 @@ add_subdirectory("module1")
 
 reason_add_executable(TARGET "project4" SRCS "src/main.cpp" LINKS "module1")
 reason_install(TARGETS "project4")
+
+enable_testing()
+
+reason_pack_deb(
+  CONTACT  "Firstname Lastname <email@example.com>"
+  DESCSUM  "Project4 Short Desc"
+  DESC     "Project4 Long Desc"
+  ARCH     "amd64"
+  DEBDEP   "libc6 (>= 2.4)"
+  SECTION  "devel"
+  PRIORITY "optional")
+include(CPack)
