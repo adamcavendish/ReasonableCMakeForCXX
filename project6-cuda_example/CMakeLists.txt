@@ -24,3 +24,5 @@ set(CUDA_cudadevrt_LIBRARY PUBLIC ${CUDA_cudadevrt_LIBRARY})
 reason_add_library(MODE cuda STATIC SHARED TARGET "cuda_util" INC_DIRS "include" SRCS "src/cuda_util.cu")
 reason_add_executable(MODE cuda TARGET "vec_add_s" SRCS "src/vec_add.cu" LINKS "cuda_util_s")
 reason_add_executable(MODE cuda TARGET "vec_add_d" SRCS "src/vec_add.cu" LINKS "cuda_util_d")
+
+reason_install(TARGETS "vec_add_s" "vec_add_d" "cuda_util_s" "cuda_util_d" INC_DIRS "include")
