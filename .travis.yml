@@ -13,6 +13,8 @@ addons:
       - clang++-5.0
       - libxcb1-dev
       - libxcb-randr0-dev
+      - libxrandr-dev
+      - libxi-dev
 
 matrix:
   include:
