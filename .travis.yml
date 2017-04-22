@@ -25,12 +25,15 @@ before_install:
   - wget -c https://github.com/adamcavendish/ReasonableCMakeForCXX/releases/download/cmake-3.7.2/cmake-3.7_3.7.2.amd64.deb
   - sudo dpkg -i cmake-3.7_3.7.2.amd64.deb
   - cmake --version
+
   - git clone --depth 1 https://github.com/glfw/glfw.git
   - cd glfw
   - mkdir build/
+  - cd build/
   - cmake ..
   - make -j$(nproc)
   - sudo make install
+  - cd ../../
 
 script:
   - bash ./build.bash
